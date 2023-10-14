@@ -7,6 +7,8 @@ const _JUMP_VELOCITY := -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var _gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@onready var _instructions : Label = $PressLabel
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -28,13 +30,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-
-
-func _on_touch_area_body_entered(body):
+func _on_touch_area_body_entered(body) -> void:
 	if is_instance_of(body, FrogBaby):
-		$PressLabel.show()
+		_instructions.show()
 
 
-func _on_touch_area_body_exited(body):
+func _on_touch_area_body_exited(body) -> void:
 	if is_instance_of(body, FrogBaby):
-			$PressLabel.hide()
+		_instructions.hide()
