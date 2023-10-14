@@ -1,5 +1,7 @@
 # Project 4
 
+## Third-Part assets
+- [tgfcoder's frog sprite](https://opengameart.org/content/frog-player-spritesheets), licensed under CC0.
 
 ### Criteria
 - [x] D-1: The repository contains a <code>README.md</code> file in its top-level directory on the default branch.
