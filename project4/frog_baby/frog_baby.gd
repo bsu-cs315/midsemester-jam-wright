@@ -11,7 +11,8 @@ var _gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var _right := true
 
-@onready var ball : Sprite2D = $BallSprite
+@onready var _ball : Sprite2D = $BallSprite
+@onready var _baby : Sprite2D = $BabySprite
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -27,9 +28,11 @@ func _physics_process(delta):
 
 	if _right:
 		velocity.x = _SPEED
-		ball.rotate(_ROTATION_PER_SECOND * delta)
+		_ball.rotate(_ROTATION_PER_SECOND * delta)
+		_baby.scale.x = -1
 	else:
 		velocity.x = -_SPEED
-		ball.rotate(-_ROTATION_PER_SECOND * delta)
+		_ball.rotate(-_ROTATION_PER_SECOND * delta)
+		_baby.scale.x = 1
 	
 	move_and_slide()
