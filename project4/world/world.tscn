@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://n8h7c6qrmd4b"]
+
+[ext_resource type="Texture2D" uid="uid://b1ufnccwn5ibk" path="res://world/grassMid.png" id="1_jjb0s"]
+[ext_resource type="Texture2D" uid="uid://ctx87jyjpjgxv" path="res://world/grassHill_left.png" id="2_gvjo8"]
+[ext_resource type="Texture2D" uid="uid://c8jplh0j12egs" path="res://world/grassHill_right.png" id="3_n54oa"]
+[ext_resource type="Texture2D" uid="uid://cyigmsxmj14lk" path="res://icon.svg" id="4_raxt6"]
+[ext_resource type="PackedScene" uid="uid://cfw7l33k4wiw" path="res://frog/frog.tscn" id="5_47i2b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bxjbc"]
+texture = ExtResource("1_jjb0s")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy8es"]
+texture = ExtResource("2_gvjo8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmwtg"]
+texture = ExtResource("3_n54oa")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_k76m7"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bxjbc")
+sources/1 = SubResource("TileSetAtlasSource_hy8es")
+sources/2 = SubResource("TileSetAtlasSource_pmwtg")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2lwyd"]
+radius = 76.3692
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_k76m7")
+format = 2
+layer_0/tile_data = PackedInt32Array(524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524292, 1, 0, 524301, 2, 0)
+
+[node name="FallingObject" type="RigidBody2D" parent="."]
+position = Vector2(225, 0)
+
+[node name="CollsionCircle" type="CollisionShape2D" parent="FallingObject"]
+position = Vector2(59.5, 55)
+shape = SubResource("CircleShape2D_2lwyd")
+
+[node name="GodotIcon" type="TextureRect" parent="FallingObject"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_raxt6")
+
+[node name="Frog" parent="." instance=ExtResource("5_47i2b")]
+position = Vector2(547, 519)
