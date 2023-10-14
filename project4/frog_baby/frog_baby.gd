@@ -1,3 +1,4 @@
+class_name FrogBaby
 extends CharacterBody2D
 
 

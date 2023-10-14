@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfw7l33k4wiw"]
+[gd_scene load_steps=5 format=3 uid="uid://cfw7l33k4wiw"]
 
 [ext_resource type="Script" path="res://frog/frog.gd" id="1_oatvh"]
 [ext_resource type="Texture2D" uid="uid://co3xlgk1ob31a" path="res://frog/PlayerSprite2.png" id="2_plrxo"]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhf4f"]
 radius = 18.0
 height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nu8u5"]
+radius = 19.0
 
 [node name="Frog" type="CharacterBody2D"]
 collision_mask = 6
@@ -16,7 +19,26 @@ texture = ExtResource("2_plrxo")
 hframes = 4
 vframes = 2
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="PhysicsCollision" type="CollisionShape2D" parent="."]
 position = Vector2(2, 11)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xhf4f")
+
+[node name="TouchArea" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="TouchCollision" type="CollisionShape2D" parent="TouchArea"]
+position = Vector2(-6, 10)
+shape = SubResource("CircleShape2D_nu8u5")
+debug_color = Color(0.890196, 0.298039, 0.32549, 0.419608)
+
+[node name="PressLabel" type="Label" parent="."]
+visible = false
+offset_left = 8.0
+offset_top = -46.0
+offset_right = 104.0
+offset_bottom = -20.0
+text = "Press Space!"
+
+[connection signal="body_entered" from="TouchArea" to="." method="_on_touch_area_body_entered"]
+[connection signal="body_exited" from="TouchArea" to="." method="_on_touch_area_body_exited"]

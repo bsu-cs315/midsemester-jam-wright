@@ -26,3 +26,15 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, _SPEED)
 
 	move_and_slide()
+
+
+
+
+func _on_touch_area_body_entered(body):
+	if is_instance_of(body, FrogBaby):
+		$PressLabel.show()
+
+
+func _on_touch_area_body_exited(body):
+	if is_instance_of(body, FrogBaby):
+			$PressLabel.hide()
