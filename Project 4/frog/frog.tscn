@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfw7l33k4wiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4flw"]
+size = Vector2(40, 40)
+
+[node name="Frog" type="CharacterBody2D"]
+
+[node name="ColorSquare" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0, 0.552941, 0, 1)
+
+[node name="CollisionSquare" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h4flw")
