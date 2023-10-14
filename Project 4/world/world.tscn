@@ -26,6 +26,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSet" id="TileSet_k76m7"]
 tile_size = Vector2i(64, 64)
@@ -42,7 +43,7 @@ radius = 76.3692
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_k76m7")
 format = 2
-layer_0/tile_data = PackedInt32Array(524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524292, 1, 0, 458756, 1, 0, 458755, 1, 0)
+layer_0/tile_data = PackedInt32Array(524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524292, 1, 0, 458756, 2, 0, 458755, 1, 0)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(225, 0)
