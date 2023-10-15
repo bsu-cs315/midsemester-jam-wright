@@ -31,3 +31,7 @@ func _process(_delta):
 
 func _set_rub_label():
 	_rub_label.text = "Percent Rubbed: %d%%" % percent_rubbed
+
+
+func _on_leave_scene_timer_timeout():
+	get_tree().call_deferred("change_scene_to_file", "res://world/world.tscn")
