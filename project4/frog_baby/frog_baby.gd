@@ -19,9 +19,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += _gravity * delta
 
-	# Handle Jump.
-#	if Input.is_action_just_pressed("jump") and is_on_floor():
-#		velocity.y = _JUMP_VELOCITY
 	# Bounce back and forth direction
 	if is_on_wall():
 		_right = !_right
@@ -36,3 +33,9 @@ func _physics_process(delta):
 		_baby.scale.x = 1
 	
 	move_and_slide()
+
+
+func _on_jump_timer_timeout() -> void:
+	velocity.y = _JUMP_VELOCITY
+	var new_time = randf_range(2,5)
+	$JumpTimer.set_wait_time(new_time)
