@@ -2,8 +2,8 @@ class_name FrogBaby
 extends CharacterBody2D
 
 
-const _SPEED := 300.0
-const _JUMP_VELOCITY := -400.0
+const _SPEED := 400.0
+const _JUMP_VELOCITY := -500.0
 const _ROTATION_PER_SECOND := PI
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
