@@ -27,6 +27,7 @@ func _process(_delta):
 		if ScoreKeeper.percent_rubbed >= 100:
 			_mash_allowed = false
 			_rub_label.text = "Nose gone!"
+			$LeaveSceneTimer.stop()
 
 
 func _set_rub_label():
