@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://n8h7c6qrmd4b"]
+[gd_scene load_steps=15 format=3 uid="uid://n8h7c6qrmd4b"]
 
 [ext_resource type="Texture2D" uid="uid://b1ufnccwn5ibk" path="res://world/grassMid.png" id="1_jjb0s"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_uhjdc"]
 [ext_resource type="Texture2D" uid="uid://ctx87jyjpjgxv" path="res://world/grassHill_left.png" id="2_gvjo8"]
+[ext_resource type="Texture2D" uid="uid://dup83hhcpqrv8" path="res://world/tree_background.JPG" id="2_yme3k"]
 [ext_resource type="Texture2D" uid="uid://c8jplh0j12egs" path="res://world/grassHill_right.png" id="3_n54oa"]
 [ext_resource type="PackedScene" uid="uid://cfw7l33k4wiw" path="res://frog/frog.tscn" id="5_47i2b"]
 [ext_resource type="Texture2D" uid="uid://etdbkv3r1vqy" path="res://world/grassHalf.png" id="5_yo34d"]
@@ -53,6 +54,14 @@ sources/3 = SubResource("TileSetAtlasSource_1tsqi")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_uhjdc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -10.0
+offset_top = -1.0
+offset_right = 1174.0
+offset_bottom = 673.0
+texture = ExtResource("2_yme3k")
+expand_mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_k76m7")
