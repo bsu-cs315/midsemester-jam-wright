@@ -24,16 +24,22 @@ func _physics_process(delta):
 	
 	if _mash_available and Input.is_action_just_pressed("mash"):
 		mash_requested.emit()
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("move_left", "move_right")
+
+	var direction := Input.get_axis("move_left", "move_right")
+
 	if direction and velocity.x==0:
 		velocity.x = direction * _MOVEMENT_SPEED
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, _DAMPENING_SPEED)
-
+	if velocity.x < 0:
+		$Frog.scale.x = 1
+		print("left: %d" %scale.x)
+	elif velocity.x > 0:
+		$Frog.scale.x = -1
+		print("right: %d" %scale.x)
 	move_and_slide()
+	print("before: %d" %scale.x)
+
 
 
 func _on_touch_area_body_entered(body) -> void:
