@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 ScoreKeeper="*res://world/score_keeper.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 move_right={
