@@ -14,7 +14,7 @@ var _right := true
 @onready var _ball : Sprite2D = $BallSprite
 @onready var _baby : Sprite2D = $BabySprite
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += _gravity * delta

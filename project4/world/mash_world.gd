@@ -17,8 +17,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	
+func _process(_delta) -> void:
 	if _mash_allowed and Input.is_action_just_pressed("mash"):
 		ScoreKeeper.percent_rubbed += _MASH_VALUE
 		$FrogArm.global_position.x += _ARM_MOVEMENT * _arm_direction
@@ -30,11 +29,11 @@ func _process(_delta):
 			$LeaveSceneTimer.stop()
 
 
-func _set_rub_label():
+func _set_rub_label() -> void:
 	_rub_label.text = "Percent Rubbed: %d%%" % ScoreKeeper.percent_rubbed
 
 
-func _on_leave_scene_timer_timeout():
+func _on_leave_scene_timer_timeout() -> void:
 	var tween := create_tween()
 	tween.tween_property($Music, "volume_db", -5, .5)
 	tween.tween_callback(_leave_scene)
