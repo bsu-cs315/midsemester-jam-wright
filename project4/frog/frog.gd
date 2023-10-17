@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 signal mash_requested
 
-const _SPEED := 300.0
+const _MOVEMENT_SPEED := 300.0
+const _DAMPENING_SPEED := 10
 const _JUMP_VELOCITY := -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -27,10 +28,10 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * _SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, _SPEED)
+	if direction and velocity.x==0:
+		velocity.x = direction * _MOVEMENT_SPEED
+	elif is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, _DAMPENING_SPEED)
 
 	move_and_slide()
 
