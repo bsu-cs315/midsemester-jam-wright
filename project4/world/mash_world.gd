@@ -35,4 +35,10 @@ func _set_rub_label():
 
 
 func _on_leave_scene_timer_timeout():
+	var tween := create_tween()
+	tween.tween_property($Music, "volume_db", -5, .5)
+	tween.tween_callback(_leave_scene)
+
+
+func _leave_scene() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://world/world.tscn")
