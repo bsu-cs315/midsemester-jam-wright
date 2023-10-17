@@ -5,6 +5,7 @@ Arrow keys or WASD to move. Space to mash. Catch frog baby and take her nose!
 
 ## Third-Part assets
 - [tgfcoder's frog sprite](https://opengameart.org/content/frog-player-spritesheets), licensed under CC0.
+- [Kenney's Platformer Pack Redux](https://www.kenney.nl/assets/platformer-pack-redux), liscened under CC0.
 
 ### Criteria
 - [x] D-1: The repository contains a <code>README.md</code> file in its top-level directory on the default branch.
