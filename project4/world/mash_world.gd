@@ -8,8 +8,11 @@ const _ARM_MOVEMENT := 20
 
 var _arm_direction := 1
 var _mash_allowed := true
+var _nose_velocity := -25
+var _nose_gravity := 2
 
 @onready var _rub_label : Label = $RubLabel
+@onready var _nose : Sprite2D = $BabyNose
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +20,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta) -> void:
+func _process(delta) -> void:
 	if _mash_allowed and Input.is_action_just_pressed("mash"):
 		ScoreKeeper.percent_rubbed += _MASH_VALUE
 		$FrogArm.global_position.x += _ARM_MOVEMENT * _arm_direction
@@ -27,6 +30,13 @@ func _process(_delta) -> void:
 			_mash_allowed = false
 			_rub_label.text = "Nose gone!"
 			$LeaveSceneTimer.stop()
+	
+	if !_mash_allowed:
+		_nose.rotate(4*TAU*delta)
+		var nose_movement = Vector2(-3, _nose_velocity)
+		_nose.global_translate(nose_movement)
+		_nose_velocity += _nose_gravity
+		
 
 
 func _set_rub_label() -> void:
@@ -41,3 +51,4 @@ func _on_leave_scene_timer_timeout() -> void:
 
 func _leave_scene() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://world/world.tscn")
+
