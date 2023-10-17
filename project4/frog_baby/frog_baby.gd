@@ -40,3 +40,4 @@ func _on_jump_timer_timeout() -> void:
 	velocity.y = _JUMP_VELOCITY
 	var new_time = randf_range(2,5)
 	$JumpTimer.set_wait_time(new_time)
+

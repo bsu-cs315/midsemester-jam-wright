@@ -24,6 +24,7 @@ func _physics_process(delta) -> void:
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = _JUMP_VELOCITY
+		$BigJumpSound.play()
 	
 	if _mash_available and Input.is_action_just_pressed("mash"):
 		mash_requested.emit()
@@ -35,6 +36,7 @@ func _physics_process(delta) -> void:
 		velocity.x = direction * _MOVEMENT_SPEED
 		if is_on_floor():
 			velocity.y = _SMALL_JUMP_VELOCITY
+			$SmallJumpSound.play()
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, _FLOOR_DAMPENING_SPEED)
 	else:
@@ -55,13 +57,13 @@ func _physics_process(delta) -> void:
 	move_and_slide()
 
 
-func _on_touch_area_body_entered(body) -> void:
-	if is_instance_of(body, FrogBaby):
+
+func _on_touch_area_area_entered(area):
 		_instructions.show()
 		_mash_available = true
 
 
-func _on_touch_area_body_exited(body) -> void:
-	if is_instance_of(body, FrogBaby):
+func _on_touch_area_area_exited(area):
+
 		_instructions.hide()
 		_mash_available = false

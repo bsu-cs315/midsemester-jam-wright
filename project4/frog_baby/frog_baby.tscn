@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpm7w"]
 radius = 32.0
-height = 192.0
+height = 256.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ox8re"]
 radius = 37.0
@@ -24,13 +24,15 @@ texture = ExtResource("2_gx2kl")
 position = Vector2(0, -120)
 texture = ExtResource("3_31ang")
 
-[node name="BabyArea" type="Area2D" parent="."]
+[node name="WholeBodyArea" type="Area2D" parent="."]
+position = Vector2(0, -128)
 collision_layer = 4
 collision_mask = 0
 
-[node name="BabyCollision" type="CollisionShape2D" parent="BabyArea"]
-position = Vector2(0, -128)
+[node name="FullCollision" type="CollisionShape2D" parent="WholeBodyArea"]
+position = Vector2(0, 40)
 shape = SubResource("CapsuleShape2D_wpm7w")
+debug_color = Color(0.819608, 0.2, 0.290196, 0.419608)
 
 [node name="BallCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ox8re")
