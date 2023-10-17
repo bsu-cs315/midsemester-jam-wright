@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://wp70152thk74"]
+[gd_scene load_steps=7 format=3 uid="uid://wp70152thk74"]
 
 [ext_resource type="Script" path="res://frog_baby/frog_baby.gd" id="1_ypr2y"]
 [ext_resource type="Texture2D" uid="uid://bjqs76hsirhdn" path="res://frog_baby/ball_base.png" id="2_gx2kl"]
 [ext_resource type="Texture2D" uid="uid://exnm5uuylgjc" path="res://frog_baby/statue.PNG" id="3_31ang"]
+[ext_resource type="AudioStream" uid="uid://jys5r0v4845v" path="res://frog_baby/stone_door.wav" id="4_kpyy2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpm7w"]
 radius = 32.0
@@ -23,10 +24,13 @@ texture = ExtResource("2_gx2kl")
 position = Vector2(0, -120)
 texture = ExtResource("3_31ang")
 
-[node name="BabyCollision" type="CollisionShape2D" parent="."]
+[node name="BabyArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="BabyCollision" type="CollisionShape2D" parent="BabyArea"]
 position = Vector2(0, -128)
 shape = SubResource("CapsuleShape2D_wpm7w")
-one_way_collision = true
 
 [node name="BallCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ox8re")
@@ -35,5 +39,9 @@ one_way_collision = true
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kpyy2")
+volume_db = 5.0
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
