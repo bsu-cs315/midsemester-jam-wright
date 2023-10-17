@@ -3,7 +3,8 @@ extends CharacterBody2D
 signal mash_requested
 
 const _MOVEMENT_SPEED := 400.0
-const _DAMPENING_SPEED := 10.0
+const _FLOOR_DAMPENING_SPEED := 100.0
+const _AIR_DAMPENING_SPEED := 10.0
 const _JUMP_VELOCITY := -600.0
 const _MOVE_Y_VELOCITY := -200.0
 
@@ -34,17 +35,26 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = _MOVE_Y_VELOCITY
 	elif is_on_floor():
-		velocity.x = move_toward(velocity.x, 0, _DAMPENING_SPEED)
-#	elif direction and velocity.y <0: # Frog is in air:
-#		velocity.x = move_toward(velocity.x, 0, _DAMPENING_SPEED)
+		velocity.x = move_toward(velocity.x, 0, _FLOOR_DAMPENING_SPEED)
+	else:
+		velocity.x = move_toward(velocity.x, 0, _AIR_DAMPENING_SPEED)
+
 
 	if velocity.x < 0:
 		_frog_sprite.scale.x = 1
 	elif velocity.x > 0:
 		_frog_sprite.scale.x = -1
 
+	# Determine what sprite frame the frog should be
+	if is_on_floor():
+		_frog_sprite.frame = 0
+	elif velocity.y > 20 or velocity.y < -20:
+		_frog_sprite.frame = 2
+
 
 	move_and_slide()
+	
+
 
 
 
