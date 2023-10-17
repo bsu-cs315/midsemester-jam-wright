@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://n8h7c6qrmd4b"]
+[gd_scene load_steps=14 format=3 uid="uid://n8h7c6qrmd4b"]
 
 [ext_resource type="Texture2D" uid="uid://b1ufnccwn5ibk" path="res://world/grassMid.png" id="1_jjb0s"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_uhjdc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyigmsxmj14lk" path="res://icon.svg" id="4_raxt6"]
 [ext_resource type="PackedScene" uid="uid://cfw7l33k4wiw" path="res://frog/frog.tscn" id="5_47i2b"]
 [ext_resource type="PackedScene" uid="uid://wp70152thk74" path="res://frog_baby/frog_baby.tscn" id="6_lw11w"]
+[ext_resource type="AudioStream" uid="uid://cij6cata2lgq5" path="res://world/world_music.ogg" id="8_621pn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bxjbc"]
 texture = ExtResource("1_jjb0s")
@@ -68,5 +69,9 @@ position = Vector2(547, 519)
 
 [node name="FrogBaby" parent="." instance=ExtResource("6_lw11w")]
 position = Vector2(88, 218)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_621pn")
+autoplay = true
 
 [connection signal="mash_requested" from="Frog" to="." method="_on_frog_mash_requested"]
