@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfw7l33k4wiw"]
+[gd_scene load_steps=6 format=3 uid="uid://cfw7l33k4wiw"]
 
 [ext_resource type="Script" path="res://frog/frog.gd" id="1_oatvh"]
 [ext_resource type="Texture2D" uid="uid://co3xlgk1ob31a" path="res://frog/PlayerSprite2.png" id="2_plrxo"]
@@ -9,6 +9,11 @@ height = 50.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nu8u5"]
 radius = 19.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xmvv"]
+font_size = 30
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Frog" type="CharacterBody2D"]
 collision_mask = 6
@@ -38,7 +43,8 @@ offset_left = 8.0
 offset_top = -46.0
 offset_right = 104.0
 offset_bottom = -20.0
-text = "Press Space!"
+text = "SPACE"
+label_settings = SubResource("LabelSettings_8xmvv")
 
 [connection signal="body_entered" from="TouchArea" to="." method="_on_touch_area_body_entered"]
 [connection signal="body_exited" from="TouchArea" to="." method="_on_touch_area_body_exited"]
