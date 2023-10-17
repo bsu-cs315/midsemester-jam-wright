@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5q1rjive0658"
-path="res://.godot/imported/baby_face.PNG-fb1f5d0029dfdcc8e7d734d1574ea1d0.ctex"
+uid="uid://bpde2ui2pwdy7"
+path="res://.godot/imported/face_background.JPG-de5f9671f921bdc32a736964bbf0f921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/baby_face.PNG"
-dest_files=["res://.godot/imported/baby_face.PNG-fb1f5d0029dfdcc8e7d734d1574ea1d0.ctex"]
+source_file="res://world/mash_world/face_background.JPG"
+dest_files=["res://.godot/imported/face_background.JPG-de5f9671f921bdc32a736964bbf0f921.ctex"]
 
 [params]
 

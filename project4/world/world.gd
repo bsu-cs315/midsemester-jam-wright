@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _on_frog_mash_requested() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://world/mash_world.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://world/mash_world/mash_world.tscn")
 
 
 #WHATS LEFT?

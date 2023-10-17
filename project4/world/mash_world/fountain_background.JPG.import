@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp6lok8553ebc"
-path="res://.godot/imported/baby_nose.PNG-acdc32f3e5575d80a13859c2831e55b8.ctex"
+uid="uid://dpeeb1pj5nb8i"
+path="res://.godot/imported/fountain_background.JPG-2ed6e3e44fe579e2ae7d8ee85d0572b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/baby_nose.PNG"
-dest_files=["res://.godot/imported/baby_nose.PNG-acdc32f3e5575d80a13859c2831e55b8.ctex"]
+source_file="res://world/mash_world/fountain_background.JPG"
+dest_files=["res://.godot/imported/fountain_background.JPG-2ed6e3e44fe579e2ae7d8ee85d0572b1.ctex"]
 
 [params]
 

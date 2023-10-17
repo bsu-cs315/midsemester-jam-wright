@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpeeb1pj5nb8i"
-path="res://.godot/imported/fountain_background.JPG-4de0dc87c95b22a3ec1e810fa93a86cf.ctex"
+uid="uid://5q1rjive0658"
+path="res://.godot/imported/baby_face.PNG-afc31ed42357979cdf4a26329548f067.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/fountain_background.JPG"
-dest_files=["res://.godot/imported/fountain_background.JPG-4de0dc87c95b22a3ec1e810fa93a86cf.ctex"]
+source_file="res://world/mash_world/baby_face.PNG"
+dest_files=["res://.godot/imported/baby_face.PNG-afc31ed42357979cdf4a26329548f067.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dggjrdloltd5q"
-path="res://.godot/imported/frog_arm.png-8fe5ce72de901705444162dabc682433.ctex"
+uid="uid://cp6lok8553ebc"
+path="res://.godot/imported/baby_nose.PNG-4b77eddd47ef1b538627230c93f55a11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/frog_arm.png"
-dest_files=["res://.godot/imported/frog_arm.png-8fe5ce72de901705444162dabc682433.ctex"]
+source_file="res://world/mash_world/baby_nose.PNG"
+dest_files=["res://.godot/imported/baby_nose.PNG-4b77eddd47ef1b538627230c93f55a11.ctex"]
 
 [params]
 

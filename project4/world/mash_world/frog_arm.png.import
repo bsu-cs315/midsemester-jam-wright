@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpde2ui2pwdy7"
-path="res://.godot/imported/face_background.JPG-1e723e48ddc2cd93fab382492aa78f9e.ctex"
+uid="uid://dggjrdloltd5q"
+path="res://.godot/imported/frog_arm.png-8be5ebea0e432678e44d1ce89e9b122f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/face_background.JPG"
-dest_files=["res://.godot/imported/face_background.JPG-1e723e48ddc2cd93fab382492aa78f9e.ctex"]
+source_file="res://world/mash_world/frog_arm.png"
+dest_files=["res://.godot/imported/frog_arm.png-8be5ebea0e432678e44d1ce89e9b122f.ctex"]
 
 [params]
 
