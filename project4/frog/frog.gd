@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 signal mash_requested
 
-const _MOVEMENT_SPEED := 300.0
-const _DAMPENING_SPEED := 10
-const _JUMP_VELOCITY := -400.0
+const _MOVEMENT_SPEED := 400.0
+const _DAMPENING_SPEED := 10.0
+const _JUMP_VELOCITY := -600.0
+const _MOVE_Y_VELOCITY := -200.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var _gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -27,11 +28,15 @@ func _physics_process(delta):
 		mash_requested.emit()
 
 	var direction := Input.get_axis("move_left", "move_right")
-
-	if direction and velocity.x==0:
+	var velocity_near_zero = velocity.x > -.5 and velocity.x < .5
+	if direction and velocity_near_zero:
 		velocity.x = direction * _MOVEMENT_SPEED
+		if is_on_floor():
+			velocity.y = _MOVE_Y_VELOCITY
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, _DAMPENING_SPEED)
+#	elif direction and velocity.y <0: # Frog is in air:
+#		velocity.x = move_toward(velocity.x, 0, _DAMPENING_SPEED)
 
 	if velocity.x < 0:
 		_frog_sprite.scale.x = 1
