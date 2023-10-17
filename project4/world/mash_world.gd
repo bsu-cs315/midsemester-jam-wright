@@ -2,24 +2,20 @@ extends Node2D
 
 const _MASH_VALUE := 2
 const _ARM_MOVEMENT := 20
-
-
-
+const _NOSE_GRAVITY := 2
 
 var _arm_direction := 1
 var _mash_allowed := true
 var _nose_velocity := -25
-var _nose_gravity := 2
 
 @onready var _rub_label : Label = $RubLabel
 @onready var _nose : Sprite2D = $BabyNose
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+
+func _ready() -> void:
 	_set_rub_label()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
 	if _mash_allowed and Input.is_action_just_pressed("mash"):
 		ScoreKeeper.percent_rubbed += _MASH_VALUE
@@ -33,9 +29,9 @@ func _process(delta) -> void:
 	
 	if !_mash_allowed:
 		_nose.rotate(4*TAU*delta)
-		var nose_movement = Vector2(-3, _nose_velocity)
+		var nose_movement := Vector2(-3, _nose_velocity)
 		_nose.global_translate(nose_movement)
-		_nose_velocity += _nose_gravity
+		_nose_velocity += _NOSE_GRAVITY
 		
 
 

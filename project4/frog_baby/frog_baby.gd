@@ -8,11 +8,11 @@ const _ROTATION_PER_SECOND := PI
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var _gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 var _right := true
 
 @onready var _ball : Sprite2D = $BallSprite
 @onready var _baby : Sprite2D = $BabySprite
+
 
 func _physics_process(delta) -> void:
 	# Add the gravity.

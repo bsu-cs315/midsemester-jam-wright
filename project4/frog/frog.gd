@@ -57,13 +57,11 @@ func _physics_process(delta) -> void:
 	move_and_slide()
 
 
+func _on_touch_area_area_entered(_area) -> void:
+	_instructions.show()
+	_mash_available = true
 
-func _on_touch_area_area_entered(area):
-		_instructions.show()
-		_mash_available = true
 
-
-func _on_touch_area_area_exited(area):
-
-		_instructions.hide()
-		_mash_available = false
+func _on_touch_area_area_exited(_area) -> void:
+	_instructions.hide()
+	_mash_available = false
