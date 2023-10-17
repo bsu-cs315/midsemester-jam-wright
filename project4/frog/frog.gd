@@ -11,6 +11,7 @@ var _gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var _mash_available = false
 
 @onready var _instructions : Label = $PressLabel
+@onready var _frog_sprite : Sprite2D = $Frog
 
 
 func _physics_process(delta):
@@ -31,14 +32,14 @@ func _physics_process(delta):
 		velocity.x = direction * _MOVEMENT_SPEED
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, _DAMPENING_SPEED)
+
 	if velocity.x < 0:
-		$Frog.scale.x = 1
-		print("left: %d" %scale.x)
+		_frog_sprite.scale.x = 1
 	elif velocity.x > 0:
-		$Frog.scale.x = -1
-		print("right: %d" %scale.x)
+		_frog_sprite.scale.x = -1
+
+
 	move_and_slide()
-	print("before: %d" %scale.x)
 
 
 
