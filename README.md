@@ -7,6 +7,7 @@ Arrow keys or WASD to move. Space to mash. Catch frog baby and take her nose!
 - [tgfcoder's frog sprite](https://opengameart.org/content/frog-player-spritesheets), licensed under CC0.
 - [Kenney's Platformer Pack Redux](https://www.kenney.nl/assets/platformer-pack-redux), liscened under CC0.
 - [Tedd Kerr (Wolfgang_)'s "Moving right along" song](https://opengameart.org/content/8-bit-theme-moving-right-along), licensed under CC0.
+- [bonebrah's stone door sfx](https://opengameart.org/content/stone-door), licensed under CC0.
 
 ### Criteria
 - [x] D-1: The repository contains a <code>README.md</code> file in its top-level directory on the default branch.
@@ -17,7 +18,7 @@ Arrow keys or WASD to move. Space to mash. Catch frog baby and take her nose!
 - [x] C-4: Either the <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game.
 - [x] C-5: The game is stable and includes some gameplay.
 - [ ] B-1: The project report is complete.
-- [ ] B-2: The game includes sound effects (imported from .wav files) and looping music (imported from .ogg files).
+- [x] B-2: The game includes sound effects (imported from .wav files) and looping music (imported from .ogg files).
 - [ ] B-3: The project runs with neither errors nor warnings.
 - [ ] B-4: The source code and project structure comply with our adopted style guides.
 - [ ] B-5: The game is playable with clear goals and end state.
