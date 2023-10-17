@@ -16,11 +16,11 @@ func _on_frog_mash_requested() -> void:
 
 
 #WHATS LEFT?
-# sound effects / music
+# sound effects / music---DONE
 # title and end screen
-# background
+# background---DONE
 
 #THE JUICE:
 # wiggle as timer goes down
-# nose pops off
+# nose pops off---DONE
 # animate frog baby 
