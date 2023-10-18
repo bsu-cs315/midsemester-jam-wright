@@ -17,7 +17,7 @@ func _on_frog_mash_requested() -> void:
 
 #WHATS LEFT?
 # sound effects / music---DONE
-# title and end screen
+# title and end screen---DONE
 # background---DONE
 
 #THE JUICE:

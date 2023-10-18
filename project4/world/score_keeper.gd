@@ -1,5 +1,6 @@
 extends Node
 
+
 var percent_rubbed := 0
 
 

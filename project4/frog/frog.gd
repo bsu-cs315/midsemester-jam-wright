@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 signal mash_requested
 
 const _MOVEMENT_SPEED := 400.0

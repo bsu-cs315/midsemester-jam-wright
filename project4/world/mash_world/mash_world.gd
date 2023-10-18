@@ -1,5 +1,6 @@
 extends Node2D
 
+
 const _MASH_VALUE := 2
 const _ARM_MOVEMENT := 20
 const _NOSE_GRAVITY := 2
@@ -33,7 +34,6 @@ func _process(delta) -> void:
 		var nose_movement := Vector2(-3, _nose_velocity)
 		_nose.global_translate(nose_movement)
 		_nose_velocity += _NOSE_GRAVITY
-
 
 
 func _set_rub_label() -> void:
