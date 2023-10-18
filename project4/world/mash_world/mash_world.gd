@@ -28,6 +28,7 @@ func _process(delta) -> void:
 			_rub_label.text = "Nose gone!"
 			$LeaveSceneTimer.stop()
 			$EndGameTimer.start()
+			$Instructions.hide()
 
 	if !_mash_allowed:
 		_nose.rotate(4*TAU*delta)
