@@ -78,4 +78,15 @@ position = Vector2(547, 519)
 stream = ExtResource("9_l4eul")
 autoplay = true
 
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Point1" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(88, 218)
+
+[node name="Point2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(417, 97)
+
+[node name="Point3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(853, 146)
+
 [connection signal="mash_requested" from="Frog" to="." method="_on_frog_mash_requested"]
