@@ -7,6 +7,7 @@ Arrow keys or WASD to move. Space to mash. Catch frog baby and take her nose!
 - [tgfcoder's frog sprite](https://opengameart.org/content/frog-player-spritesheets), licensed under CC0.
 - [Kenney's Platformer Pack Redux](https://www.kenney.nl/assets/platformer-pack-redux), liscened under CC0.
 - [Tedd Kerr (Wolfgang_)'s "Moving right along" song](https://opengameart.org/content/8-bit-theme-moving-right-along), licensed under CC0.
+- [Tedd Kerr (Wolfgang_)'s "Upbeat Overworld" song](https://opengameart.org/content/8bit-theme-upbeat-overworld), licensed under CC0.
 - [bonebrah's stone door sfx](https://opengameart.org/content/stone-door), licensed under CC0.
 
 ### Criteria

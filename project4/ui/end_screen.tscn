@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctdyy2fnc0s0x"]
+[gd_scene load_steps=6 format=3 uid="uid://ctdyy2fnc0s0x"]
 
 [ext_resource type="Texture2D" uid="uid://drbjswfqrs3ph" path="res://ui/frog_baby_full.JPG" id="1_c8yk3"]
 [ext_resource type="Script" path="res://ui/end_screen.gd" id="1_ofurq"]
 [ext_resource type="Texture2D" uid="uid://ca6273qdevhyu" path="res://ui/dialogue.png" id="2_wq88l"]
+[ext_resource type="AudioStream" uid="uid://6ths3ktpro8b" path="res://ui/upbeatoverworld.ogg" id="4_jp1fu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_47svx"]
 font_size = 43
@@ -62,5 +63,9 @@ offset_bottom = 581.0
 theme_override_colors/font_color = Color(0, 0.682353, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Return to Title"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jp1fu")
+autoplay = true
 
 [connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]

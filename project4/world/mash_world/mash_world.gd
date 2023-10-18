@@ -26,13 +26,14 @@ func _process(delta) -> void:
 			_mash_allowed = false
 			_rub_label.text = "Nose gone!"
 			$LeaveSceneTimer.stop()
+			$EndGameTimer.start()
 
 	if !_mash_allowed:
 		_nose.rotate(4*TAU*delta)
 		var nose_movement := Vector2(-3, _nose_velocity)
 		_nose.global_translate(nose_movement)
 		_nose_velocity += _NOSE_GRAVITY
-		$EndGameTimer.start()
+
 
 
 func _set_rub_label() -> void:
