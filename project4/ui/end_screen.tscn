@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctdyy2fnc0s0x"]
+
+[ext_resource type="Texture2D" uid="uid://drbjswfqrs3ph" path="res://ui/frog_baby_full.JPG" id="1_c8yk3"]
+[ext_resource type="Script" path="res://ui/end_screen.gd" id="1_ofurq"]
+[ext_resource type="Texture2D" uid="uid://ca6273qdevhyu" path="res://ui/dialogue.png" id="2_wq88l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_47svx"]
+font_size = 43
+font_color = Color(0, 0, 0, 1)
+
+[node name="EndScreen" type="Node2D"]
+script = ExtResource("1_ofurq")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -1580.0
+offset_top = -1711.0
+offset_right = 3028.0
+offset_bottom = 1749.0
+texture = ExtResource("1_c8yk3")
+
+[node name="Bubble1" type="TextureRect" parent="."]
+offset_left = 544.0
+offset_top = 169.0
+offset_right = 817.0
+offset_bottom = 393.0
+texture = ExtResource("2_wq88l")
+
+[node name="Dialogue1" type="Label" parent="Bubble1"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 48.0
+offset_right = 239.0
+offset_bottom = 172.0
+text = "WE'RE 
+SAVED"
+label_settings = SubResource("LabelSettings_47svx")
+horizontal_alignment = 1
+
+[node name="Bubble2" type="TextureRect" parent="."]
+offset_left = 535.0
+offset_top = 302.0
+offset_right = 807.0
+offset_bottom = 526.0
+scale = Vector2(-1, -1)
+texture = ExtResource("2_wq88l")
+
+[node name="Dialogue2" type="Label" parent="Bubble2"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 136.0
+offset_right = 440.0
+offset_bottom = 206.0
+scale = Vector2(-1, -1)
+text = "YAAYYYYY"
+label_settings = SubResource("LabelSettings_47svx")
+
+[node name="TitleButton" type="Button" parent="."]
+offset_left = 175.0
+offset_top = 542.0
+offset_right = 336.0
+offset_bottom = 581.0
+theme_override_colors/font_color = Color(0, 0.682353, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Return to Title"
+
+[connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]

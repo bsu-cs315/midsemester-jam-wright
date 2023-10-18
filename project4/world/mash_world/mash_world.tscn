@@ -53,4 +53,8 @@ autostart = true
 stream = ExtResource("6_k83a5")
 autoplay = true
 
+[node name="EndGameTimer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="timeout" from="LeaveSceneTimer" to="." method="_on_leave_scene_timer_timeout"]
+[connection signal="timeout" from="EndGameTimer" to="." method="_on_end_game_timer_timeout"]

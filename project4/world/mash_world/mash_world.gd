@@ -26,13 +26,13 @@ func _process(delta) -> void:
 			_mash_allowed = false
 			_rub_label.text = "Nose gone!"
 			$LeaveSceneTimer.stop()
-	
+
 	if !_mash_allowed:
 		_nose.rotate(4*TAU*delta)
 		var nose_movement := Vector2(-3, _nose_velocity)
 		_nose.global_translate(nose_movement)
 		_nose_velocity += _NOSE_GRAVITY
-		
+		$EndGameTimer.start()
 
 
 func _set_rub_label() -> void:
@@ -48,3 +48,6 @@ func _on_leave_scene_timer_timeout() -> void:
 func _leave_scene() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://world/world.tscn")
 
+
+func _on_end_game_timer_timeout() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://ui/end_screen.tscn")
